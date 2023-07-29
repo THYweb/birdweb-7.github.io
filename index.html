@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>鳥類圖鑑</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+	
+	<header id="birdheader">
+		<p>鳥類圖鑑</p>
+	</header>
+	
+	<main>
+	
+		<section>
+			<ul>
+				<li class="list active" data-filter="all">All</li>
+				<li class="list" data-filter="local">本土鳥類</li>
+				<li class="list" data-filter="transit">過境鳥、候鳥</li>
+				<li class="list" data-filter="all" onclick="Clear()">clear</li>
+			</ul>
+		</section>
+		
+		<section class="birdsection">
+			
+			<div class="bird">
+	
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('台灣藍鵲')"><img src="image/bird1.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('小卷尾')" ><img src="image/bird2.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('小剪尾')"><img src="image/bird3.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('水雉')"><img src="image/bird4.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('火冠戴菊')" ><img src="image/bird5.jpg"></a>
+				</div>
+				
+
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('台灣紫嘯鶇')"><img src="image/bird6.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('台灣噪鶥')" ><img src="image/bird7.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('白耳畫眉')"><img src="image/bird8.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('白頭翁')"><img src="image/bird9.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('白環鸚嘴鵯')" ><img src="image/bird10.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('灰喉山椒鳥')"><img src="image/bird11.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('灰鷽')" ><img src="image/bird12.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('河鳥')"><img src="image/bird13.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('青背山雀')"><img src="image/bird14.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('冠羽畫眉')" ><img src="image/bird15.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('星鴉')"><img src="image/bird16.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('紅胸啄花')" ><img src="image/bird17.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('紅嘴黑鵯')"><img src="image/bird18.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('栗背林鴝')"><img src="image/bird19.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('酒紅朱雀')" ><img src="image/bird20.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('喜鵲')"><img src="image/bird21.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃山雀')" ><img src="image/bird22.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃羽鸚嘴')"><img src="image/bird23.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃胸青鶲')"><img src="image/bird24.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃胸藪鶥')" ><img src="image/bird25.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃腹仙鶲')"><img src="image/bird26.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黑長尾雉')" ><img src="image/bird27.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('鉛色水鶇')"><img src="image/bird28.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('綠繡眼')"><img src="image/bird29.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('翠鳥')" ><img src="image/bird30.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('鳳頭蒼鷹')"><img src="image/bird31.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('褐頭鷦鶯')" ><img src="image/bird32.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('樹鵲')"><img src="image/bird33.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('鵂鶹')"><img src="image/bird34.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('藍腹鷴')" ><img src="image/bird35.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('八色鳥')"><img src="image2/bird1.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('小秧雞')"><img src="image2/bird2.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('白腰鵲鴝')"><img src="image2/bird3.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('白鶺鴒')"><img src="image2/bird4.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('灰鶺鴒')"><img src="image2/bird5.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('花雀')"><img src="image2/bird6.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('紅冠臘嘴雀')"><img src="image2/bird7.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('紅胸鶲')"><img src="image2/bird8.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('栗喉虎蜂')"><img src="image2/bird9.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('燕鴴')"><img src="image2/bird10.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('野鴝')"><img src="image2/bird11.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('棕腹大仙鶲')"><img src="image2/bird12.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黃尾鴝')"><img src="image2/bird13.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黃眉柳鶯')"><img src="image2/bird14.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黃眉黃鶲')"><img src="image2/bird15.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黃眉鵐')"><img src="image2/bird16.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黑面琵鷺')"><img src="image2/bird17.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('黑頭織布鳥')"><img src="image2/bird18.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('銅藍鶲')"><img src="image2/bird19.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('銹鵐')"><img src="image2/bird20.jpg"></a>
+				</div>
+				
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('橙頰梅花雀')"><img src="image2/bird21.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('燕鴴')"><img src="image2/bird22.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('藍喉歌鴝')"><img src="image2/bird23.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('藍歌鴝')"><img src="image2/bird24.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="transit" >
+					<a href="#birdbox" onclick="show('藍磯鶇')"><img src="image2/bird25.jpg"></a>
+				</div>
+				
+			
+			</div>
+
+			<div id="birdbox">
+				<!--顯示Json檔的鳥照片-->
+				<div id="divImg"></div>
+				<!--顯示json檔的描述內容--> 
+				<div class="block">
+					<div id="divShow"></div>
+					<button  class="birdbtn"><a href="#birdheader">回到最上面</a></button>
+				</div>
+			</div>
+			
+		</section>
+		
+		
+		
+
+	</main>
+	
+	<footer>
+
+        <div class="ft">
+             &copy; copyright 2023 THY bird website
+        </div>
+       
+    </footer>
+	
+
+	<script>
+
+		let list=document.querySelectorAll('.list');
+		let itemBox=document.querySelectorAll('.itemBox');
+
+		//result1是顯示照片
+		let result1=document.getElementById("divImg");
+		//result2是顯示描述鳥類特徵
+		let result2=document.getElementById("divShow");
+
+		for(let i=0;i<list.length;i++){
+
+			//ul的list 點擊監聽事件
+			list[i].addEventListener('click',function(){
+
+				for(let j=0;j<list.length;j++){
+					//移除.active的css
+					list[j].classList.remove('active');
+				}
+
+				//每個ul的list新增.active
+				this.classList.add('active');
+
+				//取得html標籤上的data-filter屬性
+				let dataFilter=this.getAttribute('data-filter');
+					
+				for(let k=0;k<itemBox.length;k++){
+					//移除.active的css
+					itemBox[k].classList.remove('active');
+					//新增.hide的css
+					itemBox[k].classList.add('hide');
+					//判斷div的data-item是否等ul的dataFilter和dataFilter==all
+					if(itemBox[k].getAttribute('data-item')==dataFilter || dataFilter=="all"){
+						//移除.hide的css
+						itemBox[k].classList.remove('hide');
+						//新增.active的css
+						itemBox[k].classList.add('active');
+					}
+
+				}
+				
+			});
+
+		}
+		
+
+		
+		/*
+		//使用jQuery的ajax讀json檔
+		function show(ns){
+			$(document).ready(function(){
+				$.ajax({
+                    url:'./json/bird.json',
+                    method:'GET',
+                    dataType:'json',
+                    success:function(data){
+                        //用for迴圈讀Json檔案內容，將data存放在bird變數
+							for(let i=0;i<data.length;i++){
+								//將json檔資料存放在data
+								let bird=data[i];
+								//if判斷Json檔裡面內容的鳥類名稱跟傳遞過來的鳥類名稱是否一樣，是的就顯示
+								//照片和鳥名和特徵，不是的話就不會顯示照片和鳥名和特徵
+								if(ns==bird.name){
+									result1.innerHTML=`<img src=${bird.url} alt=${bird.name}>`;
+									result2.innerHTML=result2.innerHTML="<h1>"+bird.name+"</h1>"+"<p>"+bird.category+"，"+bird.local+"，"+bird.description+"</p>";
+								}
+							}
+                    }
+                });
+		 	});
+		}
+		*/
+
+		
+		//使用fetch讀json檔案
+		function show(ns){	
+			fetch("./json/bird.json").then(function(response){
+				return response.json(); //選擇Json格式
+			}).then(function(data){
+				//用for迴圈讀Json檔案內容，將data存放在bird變數
+				for(let i=0;i<data.length;i++){
+					//將json檔資料存放在data
+					let bird=data[i];
+					//if判斷Json檔裡面內容的鳥類名稱跟傳遞過來的鳥類名稱是否一樣，是的就顯示
+					//照片和鳥名和特徵，不是的話就不會顯示照片和鳥名和特徵
+					if(ns==bird.name){
+						result1.innerHTML=`<img src=${bird.url} alt=${bird.name}>`;
+						result2.innerHTML="<h1>"+bird.name+"</h1>"+"<p>"+bird.category+"，"+bird.local+"，"+bird.description+"</p>";
+					}
+				}
+						
+			});	
+		}
+        
+		
+		
+		/*
+		//使用Axios讀json檔案
+		function show(ns){
+			axios.get("./json/bird.json").then(function(response){
+				let data=response.data;
+				//用for迴圈讀Json檔案內容，將data存放在bird變數
+				for(let i=0;i<data.length;i++){
+					//將json檔資料存放在data
+					let bird=data[i];
+					//if判斷Json檔裡面內容的鳥類名稱跟傳遞過來的鳥類名稱是否一樣，是的就顯示
+					//照片和鳥名和特徵，不是的話就不會顯示照片和鳥名和特徵
+					if(ns==bird.name){
+						result1.innerHTML=`<img src=${bird.url} alt=${bird.name}>`;
+						result2.innerHTML="<h1>"+bird.name+"</h1>"+"<p>"+bird.category+"，"+bird.local+"，"+bird.description+"</p>";
+					}
+				}
+			});
+		}
+		*/
+
+
+		 function Clear(){
+			result1.innerHTML="";
+			result2.innerHTML="";
+		 }
+
+
+
+
+	</script>
+
+
+</body>
+</html>

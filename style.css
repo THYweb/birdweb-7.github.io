@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Lobster&family=Montserrat&family=Noto+Sans+TC:wght@300&family=Poppins&family=Roboto&display=swap');
+
+*{	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+header{
+	height:100px;
+	width: 100%;
+	background-color:black;
+	color: white;
+	text-align: center;
+}
+
+header p{
+	font-size:56px;
+	position: relative;
+	top:10%;
+}
+
+main{
+	margin: 20px auto;
+}
+
+
+
+section ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+}
+
+section ul li{
+	list-style: none;
+	background: #eee;
+	padding: 12px 20px;
+	margin: 5px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+section ul li.active{
+	background:black;
+	color: #fff;
+}
+
+
+.birdsection{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bird{
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(60px, 1fr)); 
+	justify-items: center;
+	align-items: center;
+	width: 30%;
+}
+.bird .itemBox{
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin: 5px;
+	display: block;
+}
+
+.bird .itemBox.hide{
+	display: none;
+}
+
+/*
+object-fit:cover
+object-fit 屬性指定元素的內容應該如何去適應指定容器的高度與寬度
+cover:保持原有尺寸比例。但部分内容可能被剪切。
+*/
+.bird .itemBox img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.bird .itemBox img:hover{
+	opacity: 0;     /* 初始透明度為0，即完全透明 */
+	animation: fadeInOut 3s infinite; /* 使用 fadeInOut 動畫，3s 表示動畫持續時間 */
+}
+
+@keyframes fadeInOut {
+	0%, 100% {
+	  opacity: 0; /* 開始和結束時完全透明 */
+	}
+	50% {
+	  opacity: 1; /* 中間時完全不透明 */
+	}
+}
+
+#birdbox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin:40px auto;
+}
+
+
+
+#divImg img{
+	width:500px;
+	height:500px;
+	object-fit: cover;
+}
+
+#divImg img:hover{
+	transform-origin: center; /* 設置縮放的基準點為圖片的中心 */
+  	animation: fadeInOut_1 3s infinite; /* 使用 zoomInOut 動畫，3s 表示動畫持續時間 */
+}
+
+@keyframes fadeInOut_1{
+	0%, 100% {
+	  opacity: 0; /* 開始和結束時完全透明 */
+	}
+	50% {
+	  opacity: 1; /* 中間時完全不透明 */
+	}
+}
+
+.itemBox img,#divImg img{
+	border-radius: 5%;
+}
+
+#divShow{
+	width:500px;
+	height:400px;
+	overflow: scroll;
+  	overflow-wrap: break-word;
+  	white-space: normal;
+	text-align: center;
+	margin-left:35px;
+	cursor: pointer;
+}
+
+#divShow:hover{
+	background-color: #eee;
+}
+
+
+
+#divShow::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color:#F8F8FF;
+}
+
+#divShow::-webkit-scrollbar-thumb{
+	background-color: #F8F8FF;
+	border: 2px solid #F5F5F5;
+}
+#divShow h1{
+	font-size:32px;
+	text-align:center;
+}
+
+#divShow p{
+	font-size:20px;
+}
+
+.birdbtn{
+	width: 100px;
+	height:50px;
+	background-color:#F8F8FF;
+	border: 1px solid #F5F5F5;
+	border-radius: 10px;
+	position: relative;
+	left: 40%;
+	right: 42%;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.birdbtn a{
+	
+	text-decoration: none;
+	color: black;
+}
+
+.birdbtn:hover{
+	position: relative; /* 設置圖片為相對定位，以便進行平移 */
+  	animation: zoomInOut 3s infinite; /* 使用 translateX 動畫，3s 表示動畫持續時間 */
+}
+
+@keyframes zoomInOut {
+	0%, 100% {
+	  transform: scale(1); /* 開始和結束時不進行縮放，即正常大小 */
+	}
+	50% {
+	  transform: scale(1.5); /* 中間時進行縮放，即放大到原來的1.5倍 */
+	}
+}
+
+footer{
+	height:100px;
+	width: 100%;
+	background-color:black;
+	color: white;
+	text-align: center;
+}
+
+footer .ft{
+	font-size:24px;
+	position: relative;
+	top: 35%;
+}
+
+@media screen and (max-width:1280px){
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); 
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 200px;
+		height: 200px;
+		margin: 5px;
+		display: block;
+	}
+
+	#divImg img{
+		width:400px;
+		height:400px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:400px;
+		height:300px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:24px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+
+}
+
+
+@media screen and (max-width:1024px){
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); 
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 200px;
+		height: 200px;
+		margin: 5px;
+		display: block;
+	}
+
+	#divImg img{
+		width:400px;
+		height:400px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:400px;
+		height:300px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:24px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+
+}
+
+@media screen and (max-width:830px){
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		display: block;
+	}
+
+	#birdbox{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#divImg{
+		margin:20px auto;
+	}
+
+	#divImg img{
+		width:400px;
+		height:400px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:400px;
+		height:300px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:36px;
+	}
+
+	#divShow p{
+		font-size:24px;
+	}
+	
+}
+
+@media screen and (max-width:545px){
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		display: block;
+	}
+
+	#birdbox{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#divImg{
+		margin:20px auto;
+	}
+
+	#divImg img{
+		width:400px;
+		height:400px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:400px;
+		height:300px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:32px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+	
+	.birdbtn{
+		position: relative;
+		left: 38%;
+		right: 30%;
+	}
+	
+}
+
+@media screen and (max-width:415px){
+
+	
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:15%;
+	}
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); 
+		justify-items: center;
+		align-items: center;
+		width:100%;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 300px;
+		height: 300px;
+		margin: 5px;
+		display: block;
+	}
+
+	
+
+	#birdbox{
+		display: flex;
+		flex-direction: column;
+		margin:20px auto;
+	}
+	
+	#divImg img{
+		width:300px;
+		height:300px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width: 300px;
+		height: 300px;
+		margin:15px auto;
+		
+	}
+
+	#divShow h1{
+		font-size:24px;
+	}
+
+	#divShow p{
+		font-size:16px;
+	}
+	
+	.birdbtn{
+		position: relative;
+		left: 30%;
+		right: 20%;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top:32%;
+	}
+
+}
+
+@media screen and (max-width:290px){
+
+	#divShow h1{
+		font-size:18px;
+	}
+
+	#divShow p{
+		font-size:16px;
+	}
+
+	footer .ft{
+		font-size:10px;
+		position: relative;
+		top:32%;
+	}
+
+}
+
+
+
+

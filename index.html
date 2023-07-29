@@ -142,6 +142,22 @@
 					<a href="#birdbox" onclick="show('藍腹鷴')" ><img src="image/bird35.jpg"></a>
 				</div>
 				
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('黃鸝')"><img src="image/bird36.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('鱗胸鷦鶥')"><img src="image/bird37.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('褐頭花翼')"><img src="image/bird38.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('白腹秧雞')"><img src="image/bird39.jpg"></a>
+				</div>
+				<div class="itemBox" data-item="local" >
+					<a href="#birdbox" onclick="show('紅頭山雀')"><img src="image/bird40.jpg"></a>
+				</div>
+				
 				<div class="itemBox" data-item="transit" >
 					<a href="#birdbox" onclick="show('八色鳥')"><img src="image2/bird1.jpg"></a>
 				</div>
@@ -303,7 +319,7 @@
 		function show(ns){
 			$(document).ready(function(){
 				$.ajax({
-                    url:'./json/bird.json',
+                    url:'json/bird.json',
                     method:'GET',
                     dataType:'json',
                     success:function(data){
@@ -327,7 +343,7 @@
 		
 		//使用fetch讀json檔案
 		function show(ns){	
-			fetch("./json/bird.json").then(function(response){
+			fetch("json/bird.json").then(function(response){
 				return response.json(); //選擇Json格式
 			}).then(function(data){
 				//用for迴圈讀Json檔案內容，將data存放在bird變數
@@ -350,7 +366,7 @@
 		/*
 		//使用Axios讀json檔案
 		function show(ns){
-			axios.get("./json/bird.json").then(function(response){
+			axios.get("json/bird.json").then(function(response){
 				let data=response.data;
 				//用for迴圈讀Json檔案內容，將data存放在bird變數
 				for(let i=0;i<data.length;i++){

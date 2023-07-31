@@ -22,10 +22,8 @@ header p{
 }
 
 main{
-	margin: 20px auto;
+	margin: 10px auto;
 }
-
-
 
 section ul{
 	display: flex;
@@ -51,22 +49,37 @@ section ul li.active{
 
 
 .birdsection{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display:grid;
+	grid-template-columns: repeat(2,1fr);
 }
+
+
 .bird{
 	display:grid;
-	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-	grid-template-rows: repeat(auto-fill, minmax(60px, 1fr)); 
-	justify-items: center;
-	align-items: center;
-	width: 30%;
+	grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(90px, 1fr)); 
+	grid-row-gap:10px;
+	grid-column-gap:5px;
+	width: 100%;
+	height:515px;
+	overflow:scroll;
 }
+
+.bird::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color:#F8F8FF;
+}
+
+.bird::-webkit-scrollbar-thumb{
+	background-color: #F8F8FF;
+	border: 2px solid #F5F5F5;
+}
+
 .bird .itemBox{
 	position: relative;
-	width: 60px;
-	height: 60px;
+	width: 90px;
+	height: 90px;
 	margin: 5px;
 	display: block;
 }
@@ -105,18 +118,14 @@ cover:保持原有尺寸比例。但部分内容可能被剪切。
 }
 
 #birdbox{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	margin:40px auto;
+	display:grid;
+	grid-template-columns: repeat(2,1fr);
 }
 
 
-
 #divImg img{
-	width:500px;
-	height:500px;
+	width:495px;
+	height:495px;
 	object-fit: cover;
 }
 
@@ -139,8 +148,8 @@ cover:保持原有尺寸比例。但部分内容可能被剪切。
 }
 
 #divShow{
-	width:500px;
-	height:400px;
+	width:450px;
+	height:435px;
 	overflow: scroll;
   	overflow-wrap: break-word;
   	white-space: normal;
@@ -165,6 +174,7 @@ cover:保持原有尺寸比例。但部分内容可能被剪切。
 	background-color: #F8F8FF;
 	border: 2px solid #F5F5F5;
 }
+
 #divShow h1{
 	font-size:32px;
 	text-align:center;
@@ -221,39 +231,47 @@ footer .ft{
 	top: 35%;
 }
 
-@media screen and (max-width:1280px){
+@media screen and (max-width:1285px){
 
 	.birdsection{
-		display: flex;
-		flex-wrap: wrap;
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
 	}
 	
 	.bird{
 		display:grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); 
+		grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(70px, 1fr)); 
+		grid-column-gap:5px;
+		grid-row-gap:10px;
 		justify-items: center;
 		align-items: center;
 		width: 100%;
+		height: 405px;
 	}
 
 	.bird .itemBox{
 		position: relative;
-		width: 200px;
-		height: 200px;
+		width: 70px;
+		height: 70px;
 		margin: 5px;
 		display: block;
 	}
 
+	#birdbox{
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+	}
+
 	#divImg img{
-		width:400px;
-		height:400px;
+		width:390px;
+		height:390px;
 		object-fit: cover;
 	}
 	
 	#divShow{
-		width:400px;
-		height:300px;
+		width:390px;
+		height:330px;
 		overflow-wrap: break-word;
 		white-space: normal;
 		text-align: center;
@@ -271,39 +289,58 @@ footer .ft{
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
 
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
+	
 	.birdsection{
-		display: flex;
-		flex-wrap: wrap;
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
 	}
 
 	.bird{
 		display:grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); 
+		grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(70px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
 		justify-items: center;
 		align-items: center;
 		width: 100%;
+		height: 310px;
 	}
 
 	.bird .itemBox{
 		position: relative;
-		width: 200px;
-		height: 200px;
+		width: 70px;
+		height: 70px;
 		margin: 5px;
 		display: block;
 	}
 
+	#birdbox{
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+	}
+
 	#divImg img{
-		width:400px;
-		height:400px;
+		width:295px;
+		height:295px;
 		object-fit: cover;
 	}
 	
 	#divShow{
-		width:400px;
-		height:300px;
+		width:295px;
+		height:230px;
 		overflow-wrap: break-word;
 		white-space: normal;
 		text-align: center;
@@ -316,12 +353,150 @@ footer .ft{
 
 	#divShow p{
 		font-size:18px;
+	}
+
+	.birdbtn{
+		width: 100px;
+		height:50px;
+		background-color:#F8F8FF;
+		border: 1px solid #F5F5F5;
+		border-radius: 10px;
+		position: relative;
+		left: 35%;
+		right: 40%;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
+	}
+
+}
+
+
+
+
+@media screen and (max-width:930px){
+
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+		height: 430px;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		display: block;
+	}
+
+	#birdbox{
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+		margin:0 auto;
+	}
+
+	
+	#divImg img{
+		width:400px;
+		height:400px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:400px;
+		height:350px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:24px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+
+	.birdbtn{
+		width: 100px;
+		height:50px;
+		background-color:#F8F8FF;
+		border: 1px solid #F5F5F5;
+		border-radius: 10px;
+		position: relative;
+		left: 35%;
+		right: 40%;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
 	}
 
 }
 
 @media screen and (max-width:830px){
 
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
+
 	.birdsection{
 		display: flex;
 		flex-wrap: wrap;
@@ -331,9 +506,12 @@ footer .ft{
 		display:grid;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
 		justify-items: center;
 		align-items: center;
 		width: 100%;
+		height: 430px;
 	}
 
 	.bird .itemBox{
@@ -345,14 +523,12 @@ footer .ft{
 	}
 
 	#birdbox{
-		display: flex;
-		flex-wrap: wrap;
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+		margin: 0 auto;
 	}
 
-	#divImg{
-		margin:20px auto;
-	}
-
+	
 	#divImg img{
 		width:400px;
 		height:400px;
@@ -361,7 +537,7 @@ footer .ft{
 	
 	#divShow{
 		width:400px;
-		height:300px;
+		height:335px;
 		overflow-wrap: break-word;
 		white-space: normal;
 		text-align: center;
@@ -369,29 +545,70 @@ footer .ft{
 	}
 
 	#divShow h1{
-		font-size:36px;
+		font-size:24px;
 	}
 
 	#divShow p{
-		font-size:24px;
+		font-size:18px;
 	}
 	
+	.birdbtn{
+		width: 100px;
+		height:50px;
+		background-color:#F8F8FF;
+		border: 1px solid #F5F5F5;
+		border-radius: 10px;
+		position: relative;
+		left: 35%;
+		right: 40%;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
+	}
+
 }
 
-@media screen and (max-width:545px){
+@media screen and (max-width:770px){
+
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
 
 	.birdsection{
 		display: flex;
 		flex-wrap: wrap;
 	}
-	
+
 	.bird{
 		display:grid;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
 		justify-items: center;
 		align-items: center;
 		width: 100%;
+		height: 430px;
 	}
 
 	.bird .itemBox{
@@ -403,23 +620,119 @@ footer .ft{
 	}
 
 	#birdbox{
-		display: flex;
-		flex-wrap: wrap;
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+		margin: 0 auto;
 	}
 
-	#divImg{
-		margin:20px auto;
-	}
 
 	#divImg img{
-		width:400px;
-		height:400px;
+		width:350px;
+		height:350px;
 		object-fit: cover;
 	}
 	
 	#divShow{
-		width:400px;
+		width:350px;
+		height:285px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:24px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+	.birdbtn{
+		width: 100px;
+		height:50px;
+		background-color:#F8F8FF;
+		border: 1px solid #F5F5F5;
+		border-radius: 10px;
+		position: relative;
+		left: 35%;
+		right: 40%;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
+	}
+
+}
+
+
+@media screen and (max-width:545px){
+
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+		height: 535px;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		display: block;
+	}
+
+	#birdbox{
+		display:grid;
+		grid-template-columns: repeat(1,1fr);
+		margin: 0 auto;
+	}
+
+	
+
+	#divImg img{
+		width:300px;
 		height:300px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:300px;
+		height:235px;
 		overflow-wrap: break-word;
 		white-space: normal;
 		text-align: center;
@@ -436,40 +749,62 @@ footer .ft{
 	
 	.birdbtn{
 		position: relative;
-		left: 38%;
-		right: 30%;
+		left: 32%;
+		right: 32%;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
 	}
 	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
+	}
+
 }
 
 @media screen and (max-width:415px){
 
 	
 
+	header{
+		height:80px;
+		width: 100%;
+	}
+
 	header p{
 		font-size:48px;
 		position: relative;
-		top:15%;
+		top:5%;
 	}
 
 	.birdsection{
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(1,1fr);
 	}
 	
 	.bird{
 		display:grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); 
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
 		justify-items: center;
 		align-items: center;
 		width:100%;
+		height: 625px;
 	}
 
 	.bird .itemBox{
 		position: relative;
-		width: 300px;
-		height: 300px;
+		width: 200px;
+		height: 200px;
 		margin: 5px;
 		display: block;
 	}
@@ -477,21 +812,21 @@ footer .ft{
 	
 
 	#birdbox{
-		display: flex;
-		flex-direction: column;
-		margin:20px auto;
+		display: grid;
+		grid-template-columns: repeat(1,1fr);
+		
 	}
 	
 	#divImg img{
-		width:300px;
-		height:300px;
+		width:200px;
+		height:200px;
 		object-fit: cover;
 	}
 	
 	#divShow{
-		width: 300px;
-		height: 300px;
-		margin:15px auto;
+		width: 200px;
+		height: 185px;
+		
 		
 	}
 
@@ -505,19 +840,39 @@ footer .ft{
 	
 	.birdbtn{
 		position: relative;
-		left: 30%;
-		right: 20%;
+		left: 25%;
+		right: 25%;
+		margin:5px;
+	}
+	
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
 	}
 	
 	footer .ft{
 		font-size:18px;
 		position: relative;
-		top:32%;
+		top: 32%;
 	}
 
 }
 
 @media screen and (max-width:290px){
+
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
 
 	#divShow h1{
 		font-size:18px;
@@ -527,10 +882,18 @@ footer .ft{
 		font-size:16px;
 	}
 
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
 	footer .ft{
-		font-size:10px;
+		font-size:18px;
 		position: relative;
-		top:32%;
+		top: 32%;
 	}
 
 }

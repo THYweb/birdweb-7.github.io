@@ -677,6 +677,96 @@ footer .ft{
 
 }
 
+@media screen and (max-width:720px){
+
+	header{
+		height:80px;
+		width: 100%;
+	}
+
+	header p{
+		font-size:48px;
+		position: relative;
+		top:5%;
+	}
+
+	.birdsection{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.bird{
+		display:grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+		grid-row-gap:5px;
+		grid-column-gap:5px;
+		justify-items: center;
+		align-items: center;
+		width: 100%;
+		height: 535px;
+	}
+
+	.bird .itemBox{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		display: block;
+	}
+
+	#birdbox{
+		display:grid;
+		grid-template-columns: repeat(1,1fr);
+		margin: 0 auto;
+	}
+
+	
+
+	#divImg img{
+		width:300px;
+		height:300px;
+		object-fit: cover;
+	}
+	
+	#divShow{
+		width:300px;
+		height:235px;
+		overflow-wrap: break-word;
+		white-space: normal;
+		text-align: center;
+		margin-left:10px;
+	}
+
+	#divShow h1{
+		font-size:32px;
+	}
+
+	#divShow p{
+		font-size:18px;
+	}
+	
+	.birdbtn{
+		position: relative;
+		left: 32%;
+		right: 32%;
+	}
+
+	footer{
+		height:80px;
+		width: 100%;
+		background-color:black;
+		color: white;
+		text-align: center;
+	}
+	
+	footer .ft{
+		font-size:18px;
+		position: relative;
+		top: 32%;
+	}
+
+}
 
 @media screen and (max-width:545px){
 
